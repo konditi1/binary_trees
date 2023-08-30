@@ -32,7 +32,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 /**
  * is_leaf - check if a node in a binary tree is a leaf
  *
- * @node: the node to be checked
+ * @tree: the node to be checked
  *
  * Return: 1 if the node is a leaf, otherwise 0
  **/
