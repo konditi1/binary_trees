@@ -32,20 +32,20 @@ bst_t *bst_insert(bst_t **tree, int value)
 			if ((temp->n > value && temp->left != NULL) ||
 					(temp->n < value && temp->right != NULL))
 				temp = temp->n > value ? temp->left : temp->right;
-			else if (insert(temp, new_node, value))
-				break;
-			else
+			else if (!insert(temp, new_node, value))
 			{
 				free(new_node);
 				return (NULL);
 			}
+			else
+				break;
 		}
 	}
 	return (new_node);
 }
 
 /**
- * insert - helper function to insert a node in bst 
+ * insert - helper function to insert a node in bst
  *
  * @temp: the subtree
  * @new_node: the new node
