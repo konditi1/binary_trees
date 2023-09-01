@@ -41,7 +41,7 @@ int is_bst(const binary_tree_t *tree, int *prev_value, int *prev_value_is_set)
 		*prev_value_is_set = 1;
 	}
 
-	if (!is_valid || *prev_value >= tree->n)
+	if (!is_valid || *prev_value > tree->n)
 		return (0);
 
 	*prev_value = tree->n;
