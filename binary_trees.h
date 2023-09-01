@@ -51,5 +51,21 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *get_sibling(binary_tree_t *node);
 int  is_perfect(const binary_tree_t *tree, size_t *depth);
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+		const binary_tree_t *second);
+size_t binary_tree_depth(const binary_tree_t *node);
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+void traverse_levelorder(binary_tree_t const *root,
+		size_t level, void (*func)(int));
+size_t get_height(binary_tree_t const *tree);
+int binary_tree_is_complete(const binary_tree_t *tree);
+int is_complete(const binary_tree_t *tree, int *is_null_valid);
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+int binary_tree_is_bst(const binary_tree_t *tree);
+int is_bst(const binary_tree_t *tree, int *prev_value, int *prev_value_is_set);
+bst_t *bst_insert(bst_t **tree, int value);
+bst_t *array_to_bst(int *array, size_t size);
+bst_t *bst_search(const bst_t *tree, int value);
 
 #endif /* _BINARY_TREES_H_ */
