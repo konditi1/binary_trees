@@ -44,7 +44,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 				break;
 			}
 			else if (temp->n == value)
-				return (NULL);
+				free(new_node);
 		}
 	}
 	return (new_node);
