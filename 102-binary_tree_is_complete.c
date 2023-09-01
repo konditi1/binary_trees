@@ -38,6 +38,9 @@ int is_complete(const binary_tree_t *tree, int *is_null_valid)
 		return (0);
 	}
 
+	if (*is_null_valid == 0)
+		return(0);
+
 	if (tree->left == NULL)
 	{
 		if (tree->right == NULL)
