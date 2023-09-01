@@ -46,9 +46,15 @@ int is_complete(const binary_tree_t *tree, int *is_null_valid, size_t height)
 	if (tree->left == NULL)
 	{
 		if (tree->right == NULL)
+		{
 			if (get_depth(tree) == height ||
 					get_depth(tree) + 1 == height)
+			{
+				if (get_depth(tree) < height)
+					*is_null_valid = 0;
 				return (1);
+			}
+		}
 		return (0);
 	}
 
