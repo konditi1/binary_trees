@@ -33,18 +33,18 @@ bst_t *bst_insert(bst_t **tree, int value)
 			if ((temp->n > value && temp->left != NULL) ||
 					(temp->n < value && temp->right != NULL))
 				temp = temp->n > value ? temp->left : temp->right;
-			else if (temp->n > value && temp->left == NULL)
+			else if ((temp->n > value && temp->left == NULL) ||
+					(temp->n < value && temp->right == NULL) ||
+					(temp->n == value))
 			{
-				temp->left = new_node;
+				if (temp->n > value && temp->left == NULL)
+					temp->left = new_node;
+				else if (temp->n < value && temp->right == NULL)
+					temp->right = new_node;
+				else if (temp->n == value)
+					free(new_node);
 				break;
 			}
-			else if (temp->n < value && temp->right == NULL)
-			{
-				temp->right = new_node;
-				break;
-			}
-			else if (temp->n == value)
-				free(new_node);
 		}
 	}
 	return (new_node);
