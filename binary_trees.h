@@ -67,5 +67,6 @@ int is_bst(const binary_tree_t *tree, int *prev_value, int *prev_value_is_set);
 bst_t *bst_insert(bst_t **tree, int value);
 bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
+int insert(bst_t *temp, bst_t *new_node, int value);
 
 #endif /* _BINARY_TREES_H_ */
