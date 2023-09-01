@@ -59,7 +59,7 @@ void traverse_levelorder(binary_tree_t const *root,
 		size_t level, void (*func)(int));
 size_t get_height(binary_tree_t const *tree);
 int binary_tree_is_complete(const binary_tree_t *tree);
-int is_complete(const binary_tree_t *tree, int *is_null_valid);
+int is_complete(const binary_tree_t *tree, int *is_null_valid, size_t height);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
