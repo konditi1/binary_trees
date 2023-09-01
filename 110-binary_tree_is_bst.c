@@ -29,6 +29,7 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 int is_bst(const binary_tree_t *tree, int *prev_value, int *prev_value_is_set)
 {
 	int is_valid = 0;
+	int check_dup = 1;
 
 	if (tree == NULL)
 		return (1);
@@ -39,9 +40,11 @@ int is_bst(const binary_tree_t *tree, int *prev_value, int *prev_value_is_set)
 	{
 		*prev_value = tree->n;
 		*prev_value_is_set = 1;
+		check_dup = 0;
 	}
 
-	if (!is_valid || *prev_value > tree->n)
+	if (!is_valid || *prev_value > tree->n ||
+			(check_dup && *prev_value == tree->n))
 		return (0);
 
 	*prev_value = tree->n;
